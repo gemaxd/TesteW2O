@@ -1,0 +1,80 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="@style/Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="LabelBase">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="LabelAdapter" parent="LabelBase">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+
+    <style name="ValueBase">
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="ValueAdapter" parent="ValueBase">
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!--LOGIN - Versão -->
+    <style name="LoginAppVersion">
+        <item name="android:padding">5dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- LOGIN - Logo Image -->
+    <style name="LoginLogoImage"></style>
+
+    <!-- LOGIN - card de informações -->
+    <style name="CardLogin">
+        <item name="android:padding">35dp</item>
+    </style>
+
+    <style name="BaseLoginCredentials">
+        <item name="android:elevation">3dp</item>
+        <item name="android:fontFamily">sans-serif-condensed-medium</item>
+        <item name="android:textColor">@color/TranslucideBlack</item>
+        <item name="android:textColorHint">@color/TranslucideDarkGray</item>
+        <item name="android:layout_marginStart">30dp</item>
+        <item name="android:layout_marginEnd">30dp</item>
+    </style>
+
+    <!-- LOGIN - nome do app -->
+    <style name="LoginAppName">
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginStart">5dp</item>
+        <item name="android:layout_marginEnd">5dp</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:fontFamily">sans-serif-condensed-medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:elevation">3dp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+    </style>
+
+    <!-- LOGIN - button -->
+    <style name="LoginButtonLogin" parent="Widget.MaterialComponents.Button">
+        <item name="android:padding">15dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif-condensed-medium</item>
+        <item name="android:text">LOGIN</item>
+    </style>
+
+
+</resources>

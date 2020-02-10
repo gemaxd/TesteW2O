@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Teste W2O</string>
+    <string name="message_offline">Você esta offline, não poderá inserir ou excluir itens. Tente reconectar para voltar a tomar essas ações.</string>
+</resources>

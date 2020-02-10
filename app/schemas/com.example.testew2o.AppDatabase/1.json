@@ -1,0 +1,64 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "25578611f5d8f636a8c4203610e1bf9d",
+    "entities": [
+      {
+        "tableName": "Item",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`item_hash` TEXT NOT NULL, `nome_item` TEXT NOT NULL, `desc_item` TEXT NOT NULL, `valor` TEXT NOT NULL, `data` INTEGER NOT NULL, `categoria` TEXT NOT NULL, PRIMARY KEY(`item_hash`))",
+        "fields": [
+          {
+            "fieldPath": "itemId",
+            "columnName": "item_hash",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nomItem",
+            "columnName": "nome_item",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "descItem",
+            "columnName": "desc_item",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "valorItem",
+            "columnName": "valor",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "datItem",
+            "columnName": "data",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "catItem",
+            "columnName": "categoria",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "item_hash"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '25578611f5d8f636a8c4203610e1bf9d')"
+    ]
+  }
+}

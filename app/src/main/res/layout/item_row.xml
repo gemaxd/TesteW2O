@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/card_item"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll_data"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ll_valor"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/LabelAdapter"
+                android:id="@+id/data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="data" />
+
+            <TextView
+                style="@style/ValueAdapter"
+                android:id="@+id/data_val"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="data" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_valor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ll_categoria"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/ll_data"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/LabelAdapter"
+                android:id="@+id/valor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="valor" />
+
+            <TextView
+                style="@style/ValueAdapter"
+                android:id="@+id/valor_val"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="valor" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_categoria"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ll_nome"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/ll_valor"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/LabelAdapter"
+                android:id="@+id/categoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="categoria" />
+
+            <TextView
+                style="@style/ValueAdapter"
+                android:id="@+id/categoria_val"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="categoria" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_nome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/item_options"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/ll_categoria"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/LabelAdapter"
+                android:id="@+id/nome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="nome" />
+
+            <TextView
+                style="@style/ValueAdapter"
+                android:id="@+id/nome_val"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="nome" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:background="@null"
+            android:padding="10dp"
+            android:id="@+id/item_options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_more_vert_black_24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
