@@ -15,6 +15,7 @@ import com.example.testew2o.interfaces.ItemListInterface
 import com.example.testew2o.model.Item
 import com.example.testew2o.util.CheckConnection
 import com.example.testew2o.util.DateUtils
+import com.example.testew2o.util.ItemUtil
 import com.example.testew2o.views.ItemAddDialog
 import kotlinx.android.synthetic.main.activity_items.*
 
@@ -27,6 +28,7 @@ class ItemsActivity : AppCompatActivity(), ItemClickListener, ItemListInterface 
     lateinit var dialogAddItem: ItemAddDialog
     private var simpleSimpledapter : ItemSimpledapter? = null
     lateinit var db : AppDatabase
+    val itemUtil = ItemUtil()
     var listaItens = ArrayList<Item>()
     val dateUtils = DateUtils()
     var delay = 2000L
@@ -79,14 +81,23 @@ class ItemsActivity : AppCompatActivity(), ItemClickListener, ItemListInterface 
         getItems()
     }
 
+    /**
+     * compartilhar item via whats, ou email
+     * */
     override fun onItemShare(item: Item) {
         sendMail(item)
     }
 
+    /**
+     * Criar evento na agenda
+     * */
     override fun onItemCreateEvent(item: Item) {
         eventCreate(item)
     }
 
+    /**
+     * Excluir item, esse metodo não fuinciona offline
+     * */
     override fun onItemExclude(item: Item) {
         if(isConnected){
             db.itemDao().delete(item)
@@ -100,7 +111,7 @@ class ItemsActivity : AppCompatActivity(), ItemClickListener, ItemListInterface 
         val email = Intent(Intent.ACTION_SEND)
         email.putExtra(Intent.EXTRA_EMAIL, "manarimjesse@gmail.com")
         email.putExtra(Intent.EXTRA_SUBJECT, "teste W2O")
-        email.putExtra(Intent.EXTRA_TEXT, item.toString())
+        email.putExtra(Intent.EXTRA_TEXT, itemUtil.createItemBodyMessageMail(item))
         email.type = "text/plain"
 
         startActivity(Intent.createChooser(email, "Choose Email Client..."))
@@ -119,8 +130,8 @@ class ItemsActivity : AppCompatActivity(), ItemClickListener, ItemListInterface 
     fun eventCreate(item : Item){
         val intent = Intent(Intent.ACTION_INSERT)
             .setData(CalendarContract.Events.CONTENT_URI)
-            .putExtra(CalendarContract.Events.TITLE, "Produto:${item.nomItem}")
-            .putExtra(CalendarContract.Events.DESCRIPTION, "Produto:${item.nomItem} Preço:${item.valorItem} Data:${dateUtils.formatDate(item)} Categoria:${item.catItem} Descrição:${item.descItem}")
+            .putExtra(CalendarContract.Events.TITLE, "Evento produto:[${item.nomItem}]")
+            .putExtra(CalendarContract.Events.DESCRIPTION, itemUtil.createItemBodyMessageEvent(item))
             .putExtra(CalendarContract.Events.EVENT_LOCATION, "AQUI")
             .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, System.currentTimeMillis())
 
